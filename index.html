@@ -100,6 +100,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#variables" class="text-gray-600 hover:text-red-600 font-medium transition-colors">Variables</a>
+                    <a href="#mapa-interactivo" class="text-gray-600 hover:text-red-600 font-medium transition-colors">Mapa de procesos</a>
                     <a href="#matriz" class="text-gray-600 hover:text-red-600 font-medium transition-colors">Matriz (MID)</a>
                     <a href="#plano" class="text-gray-600 hover:text-red-600 font-medium transition-colors">Plano Estratégico</a>
                     <a href="#conclusiones" class="text-gray-600 hover:text-red-600 font-medium transition-colors">Conclusiones</a>
@@ -150,6 +151,224 @@
                 <!-- Injected via JS -->
             </div>
         </section>
+
+
+        <!-- Section mapa de procesos-->
+         <section id="mapa-interactivo" class="scroll-mt-24 py-12">
+            <div class="mb-8 border-l-4 border-red-600 pl-4">
+                <h2 class="text-3xl font-bold text-gray-900">Mapa de Procesos Operativo</h2>
+                <p class="mt-2 text-gray-600 max-w-4xl">
+                    Representación visual del flujo de valor de Nike Jordan, categorizado por niveles de influencia estratégica.
+                </p>
+            </div>
+
+            <div class="mapa-wrapper bg-white p-8 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                <div class="mapa-main-container">
+                    
+                    <div class="side-panel entry-panel">
+                        <div class="side-content">
+                            <span class="text-xs font-black text-gray-400 uppercase tracking-tighter mb-2">Entradas</span>
+                            <p class="vertical-text">NECESIDADES Y EXPECTATIVAS DE PARTES INTERESADAS</p>
+                        </div>
+                    </div>
+
+                    <div class="center-flow">
+                        
+                        <div class="process-group group-e">
+                            <div class="group-label">
+                                <span class="label-circle">E</span>
+                                <span class="label-name">PROCESOS ESTRATÉGICOS</span>
+                            </div>
+                            <div class="boxes-container">
+                                <div class="p-box" title="E1"><span>Alianzas y Patrocinios</span></div>
+                                <div class="p-box" title="E2"><span>Expansión Digital</span></div>
+                                <div class="p-box" title="E3"><span>Innovación y Diseño</span></div>
+                                <div class="p-box" title="E4"><span>Branding y Posicionamiento</span></div>
+                            </div>
+                        </div>
+
+                        <div class="process-group group-m">
+                            <div class="group-label">
+                                <span class="label-circle">M</span>
+                                <span class="label-name">PROCESOS MISIONALES</span>
+                            </div>
+                            <div class="boxes-container">
+                                <div class="p-box" title="M1"><span>Marketing y Publicidad</span></div>
+                                <div class="p-box" title="M2"><span>Ventas y Distribución</span></div>
+                                <div class="p-box" title="M3"><span>Producción y Manufactura</span></div>
+                                <div class="p-box" title="M4"><span>Investigación de Mercado</span></div>
+                            </div>
+                        </div>
+
+                        <div class="process-group group-a">
+                            <div class="group-label">
+                                <span class="label-circle">A</span>
+                                <span class="label-name">PROCESOS DE APOYO</span>
+                            </div>
+                            <div class="boxes-container">
+                                <div class="p-box" title="A1"><span>Cadena de Suministro</span></div>
+                                <div class="p-box" title="A2"><span>Recursos Humanos</span></div>
+                                <div class="p-box" title="A3"><span>Tecnología (TI)</span></div>
+                                <div class="p-box" title="A4"><span>Sostenibilidad</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="side-panel exit-panel">
+                        <div class="side-content">
+                            <span class="text-xs font-black text-gray-400 uppercase tracking-tighter mb-2">Salidas</span>
+                            <p class="vertical-text">SATISFACCIÓN DE PARTES INTERESADAS</p>
+                            <div class="arrow-indicator"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <style>
+                .mapa-main-container {
+                    display: grid;
+                    grid-template-columns: 80px 1fr 80px;
+                    gap: 20px;
+                    align-items: stretch;
+                    min-height: 500px;
+                }
+
+                /* Paneles Laterales */
+                .side-panel {
+                    background: #f3f4f6;
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 15px;
+                    border: 1px solid #e5e7eb;
+                }
+                .vertical-text {
+                    writing-mode: vertical-lr;
+                    transform: rotate(180deg);
+                    text-align: center;
+                    font-weight: 800;
+                    font-size: 0.75rem;
+                    color: #4b5563;
+                    letter-spacing: 0.05em;
+                }
+
+                /* Contenedor de Flujo Central */
+                .center-flow {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .process-group {
+                    display: flex;
+                    background: #fff;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    border: 1px solid #f3f4f6;
+                    transition: transform 0.3s ease;
+                }
+
+                .process-group:hover {
+                    transform: translateX(10px);
+                }
+
+                /* Etiquetas E, M, A */
+                .group-label {
+                    width: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    color: white;
+                }
+                .label-circle {
+                    font-size: 1.5rem;
+                    font-weight: 900;
+                    margin-bottom: 5px;
+                }
+                .label-name {
+                    writing-mode: vertical-lr;
+                    transform: rotate(180deg);
+                    font-size: 0.6rem;
+                    font-weight: 700;
+                    white-space: nowrap;
+                }
+
+                /* Colores por Grupo */
+                .group-e .group-label { background-color: #dc2626; } /* Rojo Jordan */
+                .group-m .group-label { background-color: #2563eb; } /* Azul */
+                .group-a .group-label { background-color: #16a34a; } /* Verde */
+
+                /* Cajas de Procesos */
+                .boxes-container {
+                    flex: 1;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 10px;
+                    padding: 15px;
+                    background: #fafafa;
+                }
+
+                .p-box {
+                    background: white;
+                    border: 1px solid #e5e7eb;
+                    border-radius: 8px;
+                    padding: 15px 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    position: relative;
+                }
+
+                .p-box span {
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    color: #1f2937;
+                }
+
+                /* Efectos Interactivos */
+                .p-box:hover {
+                    transform: scale(1.05) translateY(-5px);
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                    z-index: 10;
+                }
+
+                .group-e .p-box:hover { border-color: #dc2626; background: #fef2f2; }
+                .group-m .p-box:hover { border-color: #2563eb; background: #eff6ff; }
+                .group-a .p-box:hover { border-color: #16a34a; background: #f0fdf4; }
+
+                /* Tooltip indicando el ID */
+                .p-box::after {
+                    content: attr(title);
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    background: #111827;
+                    color: white;
+                    font-size: 0.6rem;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    opacity: 0;
+                    transition: opacity 0.2s;
+                }
+                .p-box:hover::after { opacity: 1; }
+
+                /* Responsivo */
+                @media (max-width: 1024px) {
+                    .boxes-container { grid-template-columns: repeat(2, 1fr); }
+                    .mapa-main-container { grid-template-columns: 1fr; }
+                    .side-panel { display: none; }
+                }
+            </style>
+        </section>
+
 
         <!-- Section 2: Matriz MID -->
         <section id="matriz" class="scroll-mt-24">
